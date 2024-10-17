@@ -102,7 +102,7 @@ class Titulaire {
 
 
     public function afficherInformationsGlobales () {
-        $result = "<h4>Informations de $this</h4><br>Son âge est de ".$this->getAgeTitulaire()." ans, il vit à ".$this->getVille().".<br>Voici la liste de ses comptes banacaires avec les détails de chaque compte :<ul>";
+        $result = "<h4>Informations de $this</h4><br>Son âge est de ".$this->getAgeTitulaire()." ans, il vit à ".$this->getVille().".<br>Voici la liste de ses comptes bancaires avec les détails de chaque compte :<ul>";
         foreach ($this->_comptesBancaires as $compteBancaire) {
             $result .= "<li>".$compteBancaire->getLibelle()." (en ".$compteBancaire->getDevise().") et dont le solde est de ".$compteBancaire->getSolde()." euros.</li>";
         }
