@@ -66,19 +66,22 @@ class CompteBancaire {
     }
 
 
-    public function crediterCompte (float $somme) : float {
-        $this->_solde = $this->_solde + $somme;
+    public function crediterCompte (float $somme) : CompteBancaire {
+        $this->_solde = $this->_solde + $somme;  // $this->_solde +=  $somme; ne fonctionne pas !
+        return $this;
     }
 
 
-    public function debiterCompte (float $somme) : float {
-        $this->_solde -= $somme;
+    public function debiterCompte (float $somme) : CompteBancaire {
+        $this->_solde = $this->_solde - $somme;  // $this->_solde -= $somme; ne fonctionne pas !
+        return $this;
     }
 
 
     public function virement1vers2 (CompteBancaire $compte1, CompteBancaire $compte2, float $montant) {
         $compte1->debiterCompte ($montant);
         $compte2->crediterCompte ($montant);
+        return [$compte1, $compte2];
     }
 
    

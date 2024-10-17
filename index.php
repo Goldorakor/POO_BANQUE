@@ -62,6 +62,10 @@ echo "<h2>Infos globales du compte choisi</h2>";
 echo $compte3->afficherInfosCompte ();
 
 
-echo "<h4>créditer le compte1 (200.5) de 400.3 euros</h4>";
+echo "<h4>créditer le compte1 (200.50) de 400.3 euros</h4>";
 $compte1->crediterCompte(400.3);
 echo $compte1->afficherInfosCompte ();
+
+echo "<h4>débiter le compte3 (4080.50) de 2000 euros</h4>";
+$compte3->debiterCompte(2000);
+echo $compte3->afficherInfosCompte ();
