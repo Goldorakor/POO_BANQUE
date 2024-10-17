@@ -78,15 +78,21 @@ class CompteBancaire {
     }
 
 
-    public function virement1vers2 (CompteBancaire $compte1, CompteBancaire $compte2, float $montant) {
-        $compte1->debiterCompte ($montant);
+    public function envoyerVirement_actuelvers2 (CompteBancaire $compte2, float $montant) {
+        $this->debiterCompte ($montant);
         $compte2->crediterCompte ($montant);
-        return [$compte1, $compte2];
+        return $this; 
+    }
+
+    public function recevoirVirement_actuelvers2 (CompteBancaire $compte2, float $montant) {
+        $this->crediterCompte ($montant);
+        $compte2->debiterCompte ($montant);
+        return $this;
     }
 
    
     public function afficherInfosCompte () : string {
-        $result = "<h2>Information sur le compte $this</h2><br><ul>
+        $result = "<h4>Information sur le compte $this</h4><ul>
         <li>devise monétaire : ".$this->getDevise()."</li>
         <li>solde du compte : ".$this->getSolde()." ".$this->getDevise()."</li>
         <li>prénom du titulaire : ".$this->_titulaire->getPrenom()."</li>
