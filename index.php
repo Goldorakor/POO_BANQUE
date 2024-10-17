@@ -112,7 +112,7 @@ echo "".convertirRouge("opération en cours ---- opération en cours")."<br>";
 $compte7->recevoirVirement_actuelvers2 ($compte8, 240);
 echo "".convertirRouge("opération effectuée ---- opération effectuée")."<br>";
 
-echo "<h4>compte 7 : va recevoir le virement</h4>";
+echo "<h4>compte 7 : a reçu le virement</h4>";
 echo $compte7->afficherInfosCompte ();
-echo "<h4>compte 8 : va envoyer le virement</h4>";
+echo "<h4>compte 8 : a envoyé le virement</h4>";
 echo $compte8->afficherInfosCompte ();
